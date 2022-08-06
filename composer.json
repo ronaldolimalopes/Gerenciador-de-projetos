@@ -1,0 +1,16 @@
+{
+    "name": "ronaldolopes/gerenciador-projetos",
+    "authors": [{
+        "name": "Ronaldo Lopes",
+        "email": "ronaldolimalopes@hotmail.com"
+    }],
+    "autoload": {
+        "psr-4": {
+            "Ronaldolopes\\GerenciadorProjetos\\": "src/",
+            "App\\": "app/"
+        }
+    },
+    "require": {
+        "pimple/pimple": "^3.0"
+    }
+}
