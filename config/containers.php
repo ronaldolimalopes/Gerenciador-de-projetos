@@ -5,7 +5,7 @@ use Pimple\Container;
 $container = new Container();
 
 $container['db'] = function(){
-    $dsn = 'mysql:host=172.19.0.2;dbname=pp_project_manager';
+    $dsn = 'mysql:host=172.20.0.2;dbname=pp_project_manager';
     $username = 'root';
     $password = 'root';
     $options = [

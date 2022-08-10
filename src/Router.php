@@ -35,7 +35,7 @@ class Router
 
         foreach ($this->routes[$method] as $route => $callback) {
             if(preg_match($route, $url, $params)){
-                return $callback($params);
+                return compact('callback', 'params');
             }
         }
         

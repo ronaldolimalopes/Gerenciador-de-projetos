@@ -1,13 +1,9 @@
 <?php
 
 use App\Models\Users;
+use App\Controllers\UsersController;
 
-$router->add('GET', '/', function() use ($container){
-    $users = new Users($container); 
-    $data = $users->get(1);
-    var_dump($data);
-    return "Estamos na homepage";
-});
+$router->add('GET', '/users/(\d+)', 'App\Controllers\UsersController::show');
 
 $router->add('GET', '/projects/(\d+)', function($params){
     return "Estamos listando os projetos, cod: ".$params[1];
