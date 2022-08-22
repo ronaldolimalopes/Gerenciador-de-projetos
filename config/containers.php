@@ -1,11 +1,16 @@
 <?php
 
 use Pimple\Container;
+use Zend\EventManager\EventManager;
 
 $container = new Container();
 
+$container['events'] = function(){
+    return new EventManager;
+};
+
 $container['db'] = function(){
-    $dsn = 'mysql:host=172.20.0.2;dbname=pp_project_manager';
+    $dsn = 'mysql:host=172.20.0.3;dbname=pp_project_manager';
     $username = 'root';
     $password = 'root';
     $options = [

@@ -73,5 +73,14 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+        'zendframework/zend-eventmanager' => array(
+            'pretty_version' => '3.2.1',
+            'version' => '3.2.1.0',
+            'reference' => 'a5e2583a211f73604691586b8406ff7296a946dd',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../zendframework/zend-eventmanager',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
     ),
 );
