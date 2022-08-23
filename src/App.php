@@ -10,14 +10,12 @@ class App
 {
 
     private $container;
-    private $router;
     private $middlewares = [
         'before' => [],
         'after' => [] 
     ];
-    public function __construct($router, $container)
+    public function __construct($container)
     {
-        $this->router = $router;
         $this->container = $container;
     }
 
@@ -26,11 +24,21 @@ class App
         $this->middlewares[$on][] = $callback;
     }
 
+    public function getRouter()
+    {
+        if(!$this->container->offsetExists('router')){
+            $this->container['router'] = function(){
+                return new Router;
+            };
+        }
+        return $this->container['router'];
+    }
+
     public function run()
     {
         try {
     
-            $result = $this->router->run();
+            $result = $this->getRouter()->run();
             
             $response = new Response;
             

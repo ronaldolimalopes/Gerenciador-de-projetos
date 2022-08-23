@@ -9,9 +9,10 @@ require __DIR__.'/vendor/autoload.php';
 $router = new Router;
 require __DIR__.'/config/containers.php';
 require __DIR__.'/config/Event.php';
-require __DIR__.'/config/routes.php';
 
-$app = new Ronaldolopes\GerenciadorProjetos\App($router, $container);
+$app = new Ronaldolopes\GerenciadorProjetos\App($container);
+$router = $app->getRouter();
 require __DIR__.'/config/Middlewares.php';
+require __DIR__.'/config/routes.php';
 $app->run();
 
