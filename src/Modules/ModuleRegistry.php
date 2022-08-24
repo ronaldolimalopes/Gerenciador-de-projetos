@@ -28,7 +28,25 @@ class ModuleRegistry
     public function run()
     {
         foreach ($this->modules as $module) {
-            //
+            $this->registry($module);
         }
+    }
+
+    public function registry($module)
+    {
+        $app = $this->app;
+        $router = $app->getRouter();
+        $container = $app->getContainer();
+
+        $namespaces = $module->getNamespace();
+
+        foreach ($namespaces as $prefix => $path) {
+            $this->composer->setPsr4($prefix, $path);  
+        }
+
+        require $module->getContainerConfig();
+        require $module->getEventConfig();
+        require $module->getMiddlewareConfig();
+        require $module->getRouteConfig();
     }
 }

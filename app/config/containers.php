@@ -3,7 +3,7 @@
 use Pimple\Container;
 use Zend\EventManager\EventManager;
 
-$container = new Container();
+// $container = new Container();
 
 $container['events'] = function(){
     return new EventManager;

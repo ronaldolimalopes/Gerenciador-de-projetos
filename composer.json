@@ -6,8 +6,7 @@
     }],
     "autoload": {
         "psr-4": {
-            "Ronaldolopes\\GerenciadorProjetos\\": "src/",
-            "App\\": "app/"
+            "Ronaldolopes\\GerenciadorProjetos\\": "src/"
         }
     },
     "require": {
