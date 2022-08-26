@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Users;
 use Pimple\Container;
 use Zend\EventManager\EventManager;
 
@@ -22,4 +23,8 @@ $container['db'] = function(){
     $pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
 
     return $pdo;
+};
+
+$container['users_model'] = function($container){
+    return new Users($container);
 };

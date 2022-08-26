@@ -70,6 +70,7 @@ class Model
         $stmt->execute(array_values($query->bind));
 
         $result = $this->get($conditions);
+        
         $this->event->trigger('updated.'.$this->table, null, $data);
 
         return  $result;
