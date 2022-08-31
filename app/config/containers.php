@@ -11,7 +11,7 @@ $container['events'] = function(){
 };
 
 $container['db'] = function(){
-    $dsn = 'mysql:host=172.19.0.5;dbname=pp_project_manager';
+    $dsn = 'mysql:host=172.20.0.2;dbname=curso_son_project_manager';
     $username = 'root';
     $password = 'root';
     $options = [
